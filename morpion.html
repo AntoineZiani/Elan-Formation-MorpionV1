@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <div id="wrapper">
+
+        <header>
+            <h1>Morpion</h1>
+        </header>
+
+        <main>
+
+            <div id="player1" class="player">
+                <h3>Joueur 1</h3>
+                <p>Symbole : X </p>
+            </div>
+
+            <div id="board">
+                <p class="cases"></p>
+                <p class="cases"></p>
+                <p class="cases"></p>
+                <p class="cases"></p>
+                <p class="cases"></p>
+                <p class="cases"></p>
+                <p class="cases"></p>
+                <p class="cases"></p>
+                <p class="cases"></p>
+            </div>
+
+            <div id="player2" class="player">
+                <h3>Joueur 2</h3>
+                <p>Symbole : O</p>
+            </div>
+
+        </main>
+
+        <footer>
+
+        </footer>
+    
+    </div>
+
+    <script>
+        //recuperer toute les cases
+        let squares = document.querySelectorAll(".cases")
+        let player = "X"
+        var img = document.createElement("img");
+        img.src = "img/x.png";
+
+        for(let square of squares){
+            square.addEventListener("click", function(){
+                if(square.innerHTML == ""){
+                    square.innerHTML=player
+                    if(player == "X"){
+                        player = "O"
+                    }else{
+                        player = "X"
+                    }
+                }
+            })
+        }
+        
+    </script>
+
+</body>
+</html>
